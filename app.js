@@ -39,23 +39,32 @@ var UIController = (function() {
 
 var controller = (function(budgetCtrl, UICtrl) {
 
-    var DOM = UICtrl.getDOMStrings();
+    var setupEventListeners = function() {
+        var DOM = UICtrl.getDOMStrings();
+
+        document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem) 
+        
+        document.addEventListener('keypress', function(event) { 
+            if (event.keyCode === 13 || event.which === 13) {
+                ctrlAddItem();
+            }
+        });
+    }    
+
 
     var ctrlAddItem = function() {
-        
+
         var input = UICtrl.getInput();
         console.log(input);
     };
 
-    document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem) 
-
-    document.addEventListener('keypress', function(event) {
-        
-        if (event.keyCode === 13 || event.which === 13) {
-            ctrlAddItem();
+    return {
+        init: function() {
+            console.log('%c✅ Aplication has started  ', 'font-weight: bold; color: green; font-family: Arial, Sans Serif;');
+            setupEventListeners();
         }
-
-    });
-    
+    };
 
 }(budgetController, UIController));
+
+controller.init();
