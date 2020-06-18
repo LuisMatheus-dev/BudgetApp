@@ -91,6 +91,20 @@ var UIController = (function() {
             document.querySelector(element).insertAdjacentHTML('beforeend', newHtml)
         },
 
+        clearFields: function() {
+            var fields;
+
+            fields = document.querySelectorAll(DOMStrings.inputDescription + ', ' + DOMStrings.inputValue);
+            
+            fieldsArr = Array.prototype.slice.call(fields);
+            
+            fieldsArr.forEach(function(current, index, array) {
+                current.value = "";
+            });
+
+            fieldsArr[0].focus();
+        },
+
         getDOMStrings: function() {
             return DOMStrings;
         }
@@ -113,16 +127,17 @@ var controller = (function(budgetCtrl, UICtrl) {
     }    
 
 
-    var ctrlAddItem = function() {
-        var input, newItem;
+var ctrlAddItem = function() {
+    var input, newItem;
 
-         input = UICtrl.getInput();
+    input = UICtrl.getInput();
 
-         newItem = budgetCtrl.addItem(input.type, input.description, input.value);
-    
-        UICtrl.addListItem(newItem, input.type);
-    };
+    newItem = budgetCtrl.addItem(input.type, input.description, input.value);
 
+    UICtrl.addListItem(newItem, input.type);
+
+    UICtrl.clearFields();
+};
     return {
         init: function() {
             console.log('%c✅ Aplication has started  ', 'font-weight: bold; color: green; font-family: Arial, Sans Serif;');
