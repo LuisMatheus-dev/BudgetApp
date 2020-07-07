@@ -8,7 +8,7 @@
 
 ## :book: Sobre:
 A ideia do modulo era consolidar os conceitos DOM,utilizando de features avançadas do Javascript, o pratica da aplicatação do Module Pattern.
-<a href="https://www.loom.com/share/dc0a4cbffc3346d8aa2fd98630155a46">:point_right: Live App</a>
+<a href="https://budget-app-course.netlify.app/">:point_right: Live App</a>
 
 ## :rocket: Funções:
 - Calculo das despesas e ganhos
