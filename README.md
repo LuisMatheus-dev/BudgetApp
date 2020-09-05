@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="budget-app" src="https://i.imgur.com/yLOprtY.png" width="452">
+  <img alt="budget-app" src="https://i.imgur.com/uIwbNlU.png" width="452">
 </p>
 
 <p align="center">
